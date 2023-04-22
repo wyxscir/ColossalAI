@@ -4,7 +4,7 @@ import torch
 import torch.nn as nn
 
 from .utils import masked_mean
-
+# 这里就是各种优化目标的定义
 
 class GPTLMLoss(nn.Module):
     """

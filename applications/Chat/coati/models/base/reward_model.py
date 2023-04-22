@@ -6,7 +6,7 @@ import torch.nn as nn
 from ..lora import LoRAModule
 
 
-class RewardModel(LoRAModule):
+class RewardModel(LoRAModule):  # 直接模型的基就是这个LoRAModule
     """
     Reward model base class.
 
@@ -24,7 +24,7 @@ class RewardModel(LoRAModule):
                  lora_train_bias: str = 'none') -> None:
         super().__init__(lora_rank=lora_rank, lora_train_bias=lora_train_bias)
         self.model = model
-        self.convert_to_lora()
+        self.convert_to_lora()  # 转化成lora的训练和测试模式
 
         if value_head is not None:
             if value_head.out_features != 1:
